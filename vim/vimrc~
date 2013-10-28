@@ -104,6 +104,10 @@ set et
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Aqui adicionando para indent line "
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 "General settings
 
@@ -151,12 +155,6 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
-
-" Aqui adicionando para indent line "
-set ts=4 sw=4 noet
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " New tab
 noremap <C-t> :tabnew<CR>
