@@ -37,7 +37,7 @@ plugins=(python git vitualenvwrapper git-flow github )
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-alias vim='/usr/local/Cellar/vim/7.4.052/bin/vim'
+#alias vim='/usr/local/Cellar/vim/7.4.052/bin/vim'
 alias gck='git checkout'
 alias gc='git commit -m '
 alias gs='git status'
