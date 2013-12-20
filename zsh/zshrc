@@ -48,6 +48,7 @@ alias ga='git add'
 alias gpl='git pull'
 alias py='ipython'
 alias postgres.server="sudo -u postgres /Library/PostgreSQL/9.2/bin/pg_ctl -D/Library/PostgreSQL/9.2/data -m fast"
+alias gpa='git remote update && git checkout master && git merge origin/master && git checkout develop && git merge origin/develop'
 
 #For virtualenvwrapper
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
