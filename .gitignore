@@ -1,0 +1,7 @@
+.rake_test_cache
+*.swp
+*.pyc
+*~
+*.egg-info/
+.idea
+.DS_Store
