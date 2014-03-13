@@ -1,3 +1,5 @@
+HOME=$HOME/.dropbox_ezlearn /Applications/Dropbox.app/Contents/MacOS/Dropbox &
+export HOME
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -49,7 +51,7 @@ alias py='ipython'
 alias postgres.server="sudo -u postgres /Library/PostgreSQL/9.2/bin/pg_ctl -D/Library/PostgreSQL/9.2/data -m fast"
 alias gpa='git remote update && git checkout master && git merge origin/master && git checkout develop && git merge origin/develop'
 alias gplez='git remote update && git checkout master && git merge dev/master && git checkout develop && git merge dev/develop'
-alias gpsez='git remote update && git push origin develop && git push origin master && git push dev develop'
+alias gpsez='git remote update && git checkout master && git push origin master && git checkout develop && git push origin develop && git push dev develop'
 
 #For virtualenvwrapper
 #For virtualenvwrapper
