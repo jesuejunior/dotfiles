@@ -1,4 +1,4 @@
-HOME=$HOME/.dropbox_ezlearn /Applications/Dropbox.app/Contents/MacOS/Dropbox &
+#HOME=$HOME/.dropbox_ezlearn /Applications/Dropbox.app/Contents/MacOS/Dropbox &
 export HOME
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
