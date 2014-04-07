@@ -37,8 +37,18 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #alias vim='/usr/local/Cellar/vim/7.4.052/bin/vim'
+alias gcm='git commit -am'
+alias gckm='git checkout master'
+alias gckd='git checkout develop'
+alias gpt='git push --tags'
+alias gmm='git merge master'
+alias gmd='git merge develop'
+alias gba='git branch -a'
+alias gt='git tag'
+alias grbd='git rebase develop'
+
 alias gck='git checkout'
-alias gc='git commit -m '
+alias gc='git commit '
 alias gs='git status'
 alias gl='git log'
 alias gm='git merge'
