@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #alias vim='/usr/local/Cellar/vim/7.4.052/bin/vim'
+alias gf='git flow '
 alias gcm='git commit -am'
 alias gckm='git checkout master'
 alias gckd='git checkout develop'
