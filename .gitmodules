@@ -48,10 +48,13 @@
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
 [submodule "vim/bundle/numbers.vim"]
 	path = vim/bundle/numbers.vim
-  url = git@github.com:myusuf3/numbers.vim.git
+	url = git@github.com:myusuf3/numbers.vim.git
 [submodule "vim/bundle/pytest.vim"]
-  path = vim/bundle/pytest.vim
-  url = git://github.com/alfredodeza/pytest.vim
+	path = vim/bundle/pytest.vim
+	url = git://github.com/alfredodeza/pytest.vim
 [submodule "vim/bundle/vim-ruby"]
-  path = vim/bundle/vim-ruby
-  url = git@github.com:vim-ruby/vim-ruby.git
+	path = vim/bundle/vim-ruby
+	 url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vimerl"]
+	path = vim/bundle/vimerl
+	url = git@github.com:jimenezrick/vimerl.git
