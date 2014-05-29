@@ -31,7 +31,7 @@ ZSH_THEME="jj"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(python git vitualenvwrapper git-flow github )
+plugins=(python git vitualenvwrapper git-flow github django pip npm node postgres supervisor tmux vagrant debian)
 
 source $ZSH/oh-my-zsh.sh
 
