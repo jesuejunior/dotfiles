@@ -5,7 +5,7 @@ cd ~/dotfiles
 
 git submodule init && git submodule update
 
-cp dotfiles/zsh/themes/jj.zsh-theme .oh-my-zsh/themes/
+cp ~/dotfiles/zsh/themes/jj.zsh-theme ~/.oh-my-zsh/themes/
 
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 

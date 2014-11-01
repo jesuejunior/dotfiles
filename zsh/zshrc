@@ -69,6 +69,9 @@ alias gpsez='git remote update && git checkout master && git push origin master 
 #For virtualenvwrapper
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
+
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
