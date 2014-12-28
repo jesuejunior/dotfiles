@@ -10,8 +10,10 @@ cp ~/dotfiles/zsh/themes/jj.zsh-theme ~/.oh-my-zsh/themes/
 ln -snf ~/dotfiles/zsh/zshrc ~/.zshrc
 
 ln -snf ~/dotfiles/vim ~/.vim
-ln -snf ~/dotfiles/vimrc ~/.vimrc
+ln -snf ~/dotfiles/vim/vimrc ~/.vimrc
 
-ln -snf ~/Dropbox/git/ssh/config ~/.ssh/config
+#ln -snf ~/Dropbox/git/ssh/config ~/.ssh/config
 
 ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
+
+vim +PluginInstall +qall
