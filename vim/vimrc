@@ -109,12 +109,12 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'alfredodeza/pytest.vim'
-
+Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/greper.vim'
 Plugin 'sickill/vim-pasta'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/Gist.vim'
+"""Plugin 'vim-scripts/Gist.vim'
 Plugin 'vim-scripts/IndexedSearch'
 
 """ Syntax Plugin 
@@ -127,10 +127,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-rbenv'
-Plugin 'jnwhiteh/vim-golang'
+""""Plugin 'tpope/vim-rails'
+""""Plugin 'tpope/vim-rake'
+""""Plugin 'tpope/vim-rbenv'
+Plugin 'fatih/vim-go'
+Plugin 'chase/vim-ansible-yaml'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -243,16 +244,17 @@ imap jj <Esc>
 nnoremap ; :
 
 " Tab navigation
-noremap <C-A-Right> :tabn<CR>
+map <C-l> :tabn<CR>
 inoremap <C-A-Right> <esc>:tabn<CR><Insert>
-noremap <C-Left> :tabprev<CR>
+map <C-h> :tabprev<CR>
 inoremap <C-Left> <ESC>tabprev<CR><Insert>
+map <C-n> :tabnew<CR>
 
 " Window navigation
-noremap <C-h> :wincmd h<CR>
-noremap <C-j> :wincmd j<CR>
-noremap <C-k> :wincmd k<CR>
-noremap <C-l> :wincmd l<CR>
+"noremap <C-h> :wincmd h<CR>
+"noremap <C-j> :wincmd j<CR>
+"noremap <C-k> :wincmd k<CR>
+"noremap <C-l> :wincmd l<CR>
 
 
 " Indent/unindent highlighted block (and maintain highlight)
