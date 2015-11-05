@@ -76,11 +76,12 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-#Path to scala
+#Pat hto scala
+export LC_ALL="en_US.utf-8"
 export SCALA_HOME=/usr/local/scala
 export PATH=$PATH:$SCALA_HOME/bin
 
+eval "$(docker-machine env default)"
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/jesuejunior/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+export NVM_DIR="/Users/jesuejunior/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
