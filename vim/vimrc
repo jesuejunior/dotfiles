@@ -1,3 +1,11 @@
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+
+" #JJ
 set nocompatible               	" be iMproved
 filetype off                   	" required!
 let mapleader=","	       	    " change the leader to be a comma vs slash 
@@ -78,6 +86,8 @@ set foldlevel=99
 "
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
+
+Plugin 'Lokaltog/powerline'
 
 Plugin 'gmarik/Vundle.vim'
 
@@ -283,6 +293,13 @@ augroup END
 " https://github.com/ggreer/the_silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" New font for VIM
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Inconsolata\ for\ Powerline:h15
+   endif
+endif
 
 """ vim air-line
 "
