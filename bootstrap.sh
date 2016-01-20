@@ -26,5 +26,7 @@ then
 fi
 
 sudo pip install mkvirtualenvwrapper
+# Install fonts pretty good
+cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
 
