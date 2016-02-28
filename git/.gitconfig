@@ -1,5 +1,5 @@
 [user]
-	name = JesueJunior
+	name = Jesue Junior
 	email = jesuesousa@gmail.com
 [core]
 	editor = vim
@@ -22,3 +22,7 @@
     added = yellow
     changed = red
     untracked = red reverse
+[pull]
+	rebase = true
+[push]
+	default = simple
