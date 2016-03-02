@@ -1,3 +1,11 @@
+#First things to do
+#
+#create/copy a ssh key
+#sudo chmod 400 jesuejunior.key
+#wget config
+#sudo chmod 600 ~/.ssh/config
+
+
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh
 
@@ -12,7 +20,7 @@ ln -snf ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -snf ~/dotfiles/vim ~/.vim
 ln -snf ~/dotfiles/vim/vimrc ~/.vimrc
 
-ln -snf ~/Dropbox/git/ssh/config ~/.ssh/config
+ln -snf ~/dotfiles/git/config ~/.ssh/config
 
 ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
 
@@ -25,7 +33,7 @@ then
     sudo easy_install pip
 fi
 
-sudo pip install mkvirtualenvwrapper
+sudo pip install virtualenvwrapper
 # Install fonts pretty good
 cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
