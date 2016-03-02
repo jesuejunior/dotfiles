@@ -33,8 +33,16 @@ then
     sudo easy_install pip
 fi
 
+
+if [ `uname -o` = "GNU/Linux" ]
+then
+    sudo yum install cmake python-devel epel-release zsh git python-pip 
+    sudo yum groupinstall "Development Tools"
+fi
+
 sudo pip install virtualenvwrapper
 # Install fonts pretty good
 cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
 
+chsh -s /bin/zsh
