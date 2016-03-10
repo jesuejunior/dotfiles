@@ -27,7 +27,7 @@ ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install python3
+    brew install python3 cmake
     brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
