@@ -36,8 +36,8 @@ fi
 
 if [ `uname -o` = "GNU/Linux" ]
 then
-    sudo yum install cmake python-devel epel-release zsh git python-pip 
-    sudo yum groupinstall "Development Tools"
+    sudo yum install -y cmake python-devel epel-release zsh git python-pip 
+    sudo yum groupinstall "Development Tools" -y
 fi
 
 sudo pip install virtualenvwrapper
