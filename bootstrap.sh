@@ -46,7 +46,7 @@ then
     make
     sudo make install
     cd ..
-    rm -rf Python-3.5.0*
+    sudo rm -rf Python-3.5.0*
 fi
 
 sudo pip install virtualenvwrapper
