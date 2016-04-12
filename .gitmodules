@@ -3,7 +3,7 @@
 	url = git://github.com/alfredodeza/pytest.vim
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
-	url = git@github.com:gmarik/Vundle.vim.git
+	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
