@@ -33,10 +33,12 @@ then
     sudo easy_install pip
 fi
 
-
-if [ `uname -o` = "GNU/Linux" ]
+python -mplatform | grep -i centos
+if [ $? = 0 ]
 then
-    sudo yum install -y cmake python-devel epel-release zsh git python-pip yum-utils  
+    sudo yum install -y cmake python-devel zsh git python-pip yum-utils \ 
+    gcc kernel-devel kernel-headers make bzip2 cmake epel-release \
+    tmux dkms python-devel mysql-devel net-tools htop vim
     sudo yum groupinstall "Development Tools" -y
     sudo yum-builddep python
     curl -O https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tgz
