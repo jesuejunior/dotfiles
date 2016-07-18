@@ -36,6 +36,7 @@ fi
 python -mplatform | grep -i centos
 if [ $? = 0 ]
 then
+    sudo yum update -y
     sudo yum install -y cmake python-devel zsh git python-pip yum-utils \ 
     gcc kernel-devel kernel-headers make bzip2 cmake epel-release \
     tmux dkms python-devel mysql-devel net-tools htop vim
