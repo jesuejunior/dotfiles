@@ -3,3 +3,8 @@ Port 443
 HostName ssh.github.com
 IdentityFile ~/.ssh/jesuejunior
 User git
+
+Host bitbucket.org
+HostName bitbucket.org
+IdentityFile ~/.ssh/jesuejunior
+User jesuejunior
