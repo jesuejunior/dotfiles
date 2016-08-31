@@ -8,3 +8,9 @@ Host bitbucket.org
 HostName bitbucket.org
 IdentityFile ~/.ssh/jesuejunior
 User jesuejunior
+
+Host git.appi.corp.local
+#Port 443
+HostName git.appi.corp.local
+IdentityFile ~/.ssh/jesuejunior-muxi
+User jesuejunior
