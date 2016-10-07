@@ -91,6 +91,9 @@ Plugin 'Lokaltog/powerline'
 
 Plugin 'gmarik/Vundle.vim'
 
+""" Themes
+Plugin 'josuegaleas/jay'
+
 """ Plugins 
 
 Plugin 'tpope/vim-fugitive'
@@ -137,7 +140,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 """" Plugin 'kchmck/vim-coffee-script'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'derekwyatt/vim-scala'
+""""Plugin 'derekwyatt/vim-scala'
 """"Plugin 'tpope/vim-rails'
 """"Plugin 'tpope/vim-rake'
 """"Plugin 'tpope/vim-rbenv'
@@ -230,7 +233,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 """ Colors
 "
-silent!colorscheme molokai
+silent!colorscheme vividchalk
 set colorcolumn=99
 set t_Co=256
 syntax on
