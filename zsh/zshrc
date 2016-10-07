@@ -52,18 +52,24 @@ alias gdf='git diff '
 alias gck='git checkout'
 alias gc='git commit '
 alias gs='git status'
-alias glg='git log --oneline --decorate --all --graph '
+alias glog='git log --oneline --decorate --all --graph '
 alias gm='git merge'
 alias gp='git push'
 alias grb='git rebase'
 alias ga='git add'
 alias gpl='git pull'
 alias gsth='git stash'
+alias glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glc='git log ORIG_HEAD.. --stat --no-merges'
+alias glol='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias glola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+alias gll='git log --graph --date=short'
 alias py='ipython'
 alias postgres.server="sudo -u postgres /Library/PostgreSQL/9.2/bin/pg_ctl -D/Library/PostgreSQL/9.2/data -m fast"
 alias gpa='git remote update && git checkout master && git merge origin/master && git checkout develop && git merge origin/develop'
+alias tmux="TERM=screen-256color-bce tmux"
 
-#For virtualenvwrapper
+
 #For virtualenvwrapper
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 

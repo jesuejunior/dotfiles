@@ -23,7 +23,7 @@ ln -snf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -snf ~/dotfiles/git/config ~/.ssh/config
 
 ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
-
+ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
