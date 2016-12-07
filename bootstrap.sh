@@ -5,6 +5,12 @@
 #wget config
 #sudo chmod 600 ~/.ssh/config
 
+python -mplatform | grep -i Ubuntu
+if [ $? = 0 ]
+then
+sudo apt-get install curl git tmux zsh vim python-pip
+
+fi
 
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh
