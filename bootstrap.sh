@@ -12,24 +12,6 @@ sudo apt-get install curl git tmux zsh vim python-pip
 
 fi
 
-# get oh my zsh
-curl -L http://install.ohmyz.sh | sh
-
-cd ~/dotfiles
-
-git submodule init && git submodule update
-
-cp ~/dotfiles/zsh/themes/jj.zsh-theme ~/.oh-my-zsh/themes/
-
-ln -snf ~/dotfiles/zsh/zshrc ~/.zshrc
-
-ln -snf ~/dotfiles/vim ~/.vim
-ln -snf ~/dotfiles/vim/vimrc ~/.vimrc
-
-ln -snf ~/dotfiles/git/config ~/.ssh/config
-
-ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
-ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -57,6 +39,26 @@ then
     cd ..
     sudo rm -rf Python-3.5.0*
 fi
+
+# get oh my zsh
+curl -L http://install.ohmyz.sh | sh
+
+cd ~/dotfiles
+
+git submodule init && git submodule update
+
+cp ~/dotfiles/zsh/themes/jj.zsh-theme ~/.oh-my-zsh/themes/
+
+ln -snf ~/dotfiles/zsh/zshrc ~/.zshrc
+
+ln -snf ~/dotfiles/vim ~/.vim
+ln -snf ~/dotfiles/vim/vimrc ~/.vimrc
+
+ln -snf ~/dotfiles/git/config ~/.ssh/config
+
+ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
+
 
 sudo pip install virtualenvwrapper
 # Install fonts pretty good
