@@ -66,7 +66,7 @@ cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
 
 #Fixing youcompleteme plugin
-cd .vim/bundle/YouCompleteMe/
+cd vim/bundle/YouCompleteMe/
 ./install.py
 
 chsh -s /bin/zsh
