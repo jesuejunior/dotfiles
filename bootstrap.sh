@@ -8,7 +8,7 @@
 python -mplatform | grep -i Ubuntu
 if [ $? = 0 ]
 then
-sudo apt-get install curl git tmux zsh vim python-pip
+sudo apt-get install curl git tmux zsh vim python-pip cmake
 
 fi
 
