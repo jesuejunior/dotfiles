@@ -69,4 +69,7 @@ vim +PluginInstall +qall
 cd vim/bundle/YouCompleteMe/
 ./install.py
 
+#Adding plugin to zsh-nvm
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+
 chsh -s /bin/zsh
