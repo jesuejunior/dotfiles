@@ -43,6 +43,9 @@ fi
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh
 
+mkdir ~/gocode
+mkdir ~/code
+
 cd ~/dotfiles
 
 git submodule init && git submodule update

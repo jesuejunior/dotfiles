@@ -85,5 +85,9 @@ export LC_ALL="en_US.utf-8"
 export SCALA_HOME=/usr/local/scala
 export PATH=$PATH:$SCALA_HOME/bin
 
+#Path to golang
+export GOPATH=~/gocode
+
+#PAth to NVM
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

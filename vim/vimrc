@@ -93,6 +93,7 @@ Plugin 'gmarik/Vundle.vim'
 
 """ Themes
 Plugin 'josuegaleas/jay'
+Plugin 'chriskempson/base16-vim'
 
 """ Plugins 
 
@@ -146,6 +147,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 """"Plugin 'tpope/vim-rbenv'
 Plugin 'fatih/vim-go'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -233,7 +235,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 """ Colors
 "
-silent!colorscheme vividchalk
+silent!colorscheme base16-solarflare " vividchalk
 set colorcolumn=99
 set t_Co=256
 syntax on
