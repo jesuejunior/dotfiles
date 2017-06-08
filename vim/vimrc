@@ -148,6 +148,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'fatih/vim-go'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-dispatch'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -235,7 +236,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 """ Colors
 "
-silent!colorscheme base16-solarflare " vividchalk
+silent!colorscheme vividchalk  " base16-solarflare " vividchalk
 set colorcolumn=99
 set t_Co=256
 syntax on
