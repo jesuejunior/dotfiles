@@ -119,8 +119,8 @@ Key | Exiting
 :q! |	quit and throw away unsaved changes |
 
 Command | Search and replace
--------|-------------------
-* |	search for word under cursor |
+--------|-------------------
+\* |	search for word under cursor |
 /pattern |	search for pattern |
 ?pattern |	search backward for pattern |
 n |	repeat search in same direction |
