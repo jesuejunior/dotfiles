@@ -87,6 +87,7 @@ export PATH=$PATH:$SCALA_HOME/bin
 
 #Path to golang
 export GOPATH=~/gocode
+export PATH=$PATH:$GOPATH/bin
 
 #PAth to NVM
 export NVM_DIR="$HOME/.nvm"
