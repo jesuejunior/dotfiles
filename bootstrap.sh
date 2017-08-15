@@ -15,10 +15,11 @@ fi
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install python3 cmake
+    brew install python3 cmake tmux htop
     brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
+    sudo pip install --ignore-installed six
 fi
 
 python -mplatform | grep -i centos
@@ -43,8 +44,7 @@ fi
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh
 
-mkdir ~/gocode
-mkdir ~/code
+mkdir ~/gocode  ~/code ~/.ssh 
 
 cd ~/dotfiles
 
@@ -69,8 +69,7 @@ cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
 
 #Fixing youcompleteme plugin
-cd vim/bundle/YouCompleteMe/
-./install.py
+./vim/bundle/YouCompleteMe/install.py
 
 #Adding plugin to zsh-nvm
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm

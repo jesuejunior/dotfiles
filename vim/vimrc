@@ -33,6 +33,7 @@ set matchpairs+=<:>         	" show matching <> (html mainly) as well
 set lazyredraw                  " do not redraw while running macros (much faster) (LazyRedraw)
 set textwidth=99                " used by gqq or <VISUAL>gq command to format lines
 set clipboard=unnamedplus       " make vim use the system clipboard by default
+set paste
 
 """ Mouse settings
 "
@@ -138,13 +139,13 @@ Plugin 'olivierverdier/python-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+""""Plugin 'mxw/vim-jsx'
 """" Plugin 'kchmck/vim-coffee-script'
 Plugin 'ekalinin/Dockerfile.vim'
-""""Plugin 'derekwyatt/vim-scala'
-""""Plugin 'tpope/vim-rails'
-""""Plugin 'tpope/vim-rake'
-""""Plugin 'tpope/vim-rbenv'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-rbenv'
 Plugin 'fatih/vim-go'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-dispatch'
