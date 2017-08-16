@@ -20,6 +20,7 @@ then
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
     sudo pip install --ignore-installed six
+	brew install go dep glide
 fi
 
 python -mplatform | grep -i centos
