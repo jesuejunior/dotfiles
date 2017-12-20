@@ -150,6 +150,7 @@ Plugin 'fatih/vim-go'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-dispatch'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 call vundle#end()
 filetype plugin indent on     " required!
