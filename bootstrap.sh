@@ -89,6 +89,7 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 cd ~/.rbenv; src/configure && make -C src && ./src/configure
 rbenv init
-
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
 chsh -s /bin/zsh
