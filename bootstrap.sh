@@ -11,6 +11,9 @@ then
 
 echo "Configuring and installing docker" 
 
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -18,8 +21,9 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 
-echo "Installing needed packages" 
-sudo apt-get install curl git tmux zsh vim python-pip cmake build-essential dkms scala ruby docker-ce guake libssl-dev libreadline-dev zlib1g-dev
+echo "Installing required packages" 
+sudo apt-get install curl git tmux zsh vim python-pip cmake build-essential dkms scala sbt ruby \
+	docker-ce guake libssl-dev libreadline-dev zlib1g-dev
 
 fi
 
