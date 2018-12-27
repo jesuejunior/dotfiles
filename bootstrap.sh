@@ -78,6 +78,7 @@ ln -snf ~/dotfiles/git/config ~/.ssh/config
 ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 
+ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 
 sudo pip install virtualenvwrapper
 # Install fonts pretty good

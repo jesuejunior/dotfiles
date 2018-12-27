@@ -69,7 +69,6 @@ alias postgres.server="sudo -u postgres /Library/PostgreSQL/9.2/bin/pg_ctl -D/Li
 alias gpa='git remote update && git checkout master && git merge origin/master && git checkout develop && git merge origin/develop'
 alias tmux="TERM=screen-256color-bce tmux"
 
-
 #For virtualenvwrapper
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
@@ -89,10 +88,14 @@ export PATH=$PATH:$SCALA_HOME/bin
 export GOPATH=~/gocode
 export PATH=$PATH:$GOPATH/bin
 
-#PAth to NVM
+#Path to NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-#setxkbmap us -variant intl
+#ASDF
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
