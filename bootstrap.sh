@@ -1,11 +1,5 @@
-#First things to do
-#
-#create/copy a ssh key
-#sudo chmod 400 jesuejunior.key
-#wget config
-#sudo chmod 600 ~/.ssh/config
-
-python -mplatform | grep -i Ubuntu
+# Starting configuration, checking by SO 
+python -mplatform | grep -i Ubuntui
 if [ $? = 0 ]
 then
 
@@ -30,12 +24,12 @@ fi
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install python3 cmake tmux htop
+    brew install python3 cmake tmux htop elixir ack git git-flow gnupg heroku httpie jq zsh tree wget  
     brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
     sudo pip install --ignore-installed six
-	brew install go dep glide
+	brew install pinentry pinentry-mac
 fi
 
 python -mplatform | grep -i centos
