@@ -1,5 +1,5 @@
 # Starting configuration, checking by SO 
-python -mplatform | grep -i Ubuntui
+python -mplatform | grep -i Ubuntu
 if [ $? = 0 ]
 then
 
@@ -30,6 +30,7 @@ then
     sudo easy_install pip
     sudo pip install --ignore-installed six
 	brew install pinentry pinentry-mac
+	brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
 fi
 
 python -mplatform | grep -i centos
