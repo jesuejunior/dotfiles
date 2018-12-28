@@ -1,8 +1,18 @@
 [user]
-	name = Jesue Junior
-	email = jesuesousa@gmail.com
+    name = Jesue Junior
+    email = jesuesousa@gmail.com
+    signingKey = 17B3DEDFB2CACEAA!
+[commit]
+    verbose = true
+    gpgsign = true
+[branch]
+    autosetuprebase = always
+[stash]
+    showPatch = true
+[merge]
+    ff = false
 [core]
-	editor = vim
+    editor = vim
 [color]
     diff = auto
     status = auto
