@@ -40,6 +40,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 if [ -z "${SSH_TTY}" ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+  gpg-connect-agent updatestartuptty /bye
 fi
 
 # Customize to your needs...
