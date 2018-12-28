@@ -35,6 +35,13 @@ plugins=(python git vitualenvwrapper git-flow github django pip npm node postgre
 
 source $ZSH/oh-my-zsh.sh
 
+#GPG config
+GPG_TTY=$(tty)
+export GPG_TTY
+if [ -z "${SSH_TTY}" ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+
 # Customize to your needs...
 #alias vim='/usr/local/Cellar/vim/7.4.052/bin/vim'
 alias gf='git flow '
