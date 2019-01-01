@@ -40,7 +40,6 @@ GPG_TTY=$(tty)
 export GPG_TTY
 if [ -z "${SSH_TTY}" ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-  gpg-connect-agent updatestartuptty /bye
 fi
 
 # Customize to your needs...
@@ -77,6 +76,7 @@ alias postgres.server="sudo -u postgres /Library/PostgreSQL/9.2/bin/pg_ctl -D/Li
 alias gpa='git remote update && git checkout master && git merge origin/master && git checkout develop && git merge origin/develop'
 alias tmux="TERM=screen-256color-bce tmux"
 
+alias yf="gpg-connect-agent updatestartuptty /bye"
 #For virtualenvwrapper
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 

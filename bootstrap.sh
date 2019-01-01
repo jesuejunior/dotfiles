@@ -65,12 +65,13 @@ cp ~/dotfiles/zsh/themes/jj.zsh-theme ~/.oh-my-zsh/themes/
 
 ln -snf ~/dotfiles/zsh/zshrc ~/.zshrc
 
+# VIM
 ln -snf ~/dotfiles/vim ~/.vim
 ln -snf ~/dotfiles/vim/vimrc ~/.vimrc
 
+# GIT
 ln -snf ~/dotfiles/git/config ~/.ssh/config
-
-ln -snf  ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # GPG links
@@ -78,6 +79,8 @@ ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
 ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf 
 
+# Emacs
+ln -snf ~/dotfiles/emacs/.spacemacs ~/.spacemacs
 
 sudo pip install virtualenvwrapper
 # Install fonts pretty good
