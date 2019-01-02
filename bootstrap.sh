@@ -24,12 +24,14 @@ fi
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install python3 cmake tmux htop elixir ack git git-flow gnupg heroku httpie jq zsh tree wget  
+    brew install python3 cmake tmux htop elixir ack git git-flow gnupg heroku httpie jq zsh tree \
+	wget  
     brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
     sudo pip install --ignore-installed six
-	brew install pinentry pinentry-mac
+	sudo pip install docker-compose
+	brew install gpg pinentry pinentry-mac asdf
 	brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
 fi
 
