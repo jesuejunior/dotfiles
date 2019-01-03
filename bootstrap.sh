@@ -24,7 +24,7 @@ fi
 if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install python3 cmake tmux htop elixir ack git git-flow gnupg heroku httpie jq zsh tree \
+    brew install python3 cmake tmux htop elixir ack git git-flow gnupg httpie jq zsh tree \
 	wget  
     brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
@@ -55,10 +55,9 @@ then
 fi
 
 # get oh my zsh
-curl -L http://install.ohmyz.sh | sh
+curl -L http://install.ohmyz.sh | sh && chsh -s /bin/zsh
 
-mkdir ~/gocode  ~/code ~/.ssh 
-
+mkdir ~/gocode ~/code ~/.ssh 
 cd ~/dotfiles
 
 git submodule init && git submodule update
@@ -101,4 +100,10 @@ rbenv init
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-chsh -s /bin/zsh
+
+#ASDF
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.2
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
