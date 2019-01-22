@@ -9,6 +9,7 @@ set termencoding=utf-8
 set nocompatible               	" be iMproved
 filetype off                   	" required!
 let mapleader=","	       	    " change the leader to be a comma vs slash 
+let g:mapleader=','
 set laststatus=2   		        " Always show the statusline
 set encoding=utf-8 		        " Necessary to show Unicode glyphs
 set hidden			            " makes vim work like every other multiple-file editor
@@ -275,6 +276,12 @@ nmap <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **/*.py" <Bar> cw<CR>
 imap jj <Esc> 
 " ; to : while in normal mode 
 nnoremap ; :
+
+if &diff
+    map <F5> :diffget LOCAL<CR>
+    map <F6> :diffget BASE<CR>
+    map <F7> :diffget REMOTE<CR>
+endif
 
 " Tab navigation
 map <C-l> :tabn<CR>

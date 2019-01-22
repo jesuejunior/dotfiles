@@ -71,6 +71,7 @@ alias glc='git log ORIG_HEAD.. --stat --no-merges'
 alias glol='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias glola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
 alias gll='git log --graph --date=short'
+alias gmt='git mergetool'
 alias py='ipython'
 alias postgres.server="sudo -u postgres /Library/PostgreSQL/9.2/bin/pg_ctl -D/Library/PostgreSQL/9.2/data -m fast"
 alias gpa='git remote update && git checkout master && git merge origin/master && git checkout develop && git merge origin/develop'
@@ -107,3 +108,12 @@ eval "$(rbenv init -)"
 #ASDF
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+#XERPA
+export DOCA_ROOT=~/code/doca
+export LUKLA_ROOT=~/code/lukla
+export PATH="$PATH:$HOME/code/coreutils/bin"
+
+alias xerpactl="$DOCA_ROOT/xerpactl"
+alias uvpn="sudo wg-quick up '$HOME/wireguard/wg0.conf'"
+alias dvpn="sudo wg-quick down '$HOME/wireguard/wg0.conf'"
