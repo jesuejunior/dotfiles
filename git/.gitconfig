@@ -11,6 +11,10 @@
     showPatch = true
 [merge]
     ff = false
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
 [core]
     editor = vim
 [color]
