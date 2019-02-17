@@ -54,6 +54,14 @@ then
     sudo rm -rf Python-3.5.0*
 fi
 
+# Isntalling rust and racer to vim
+curl https://sh.rustup.rs -sSf | sh
+rustup default nightly
+rustup component add racer
+rustup toolchain add nightly
+cargo +nightly install racer
+rustup component add rust-src
+
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s /bin/zsh
 

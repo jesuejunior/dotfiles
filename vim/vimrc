@@ -153,6 +153,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-dispatch'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'racer-rust/vim-racer'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -373,3 +374,12 @@ let vimrc_extra=expand("~/.vimrc_extra")
 if filereadable(vimrc_extra)
     exec ":source " . vimrc_extra
 endif
+
+"""RUST
+set hidden
+let g:racer_cmd = "/home/${USER}/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap grd <Plug>(rust-def)
+au FileType rust nmap grs <Plug>(rust-def-split)
+au FileType rust nmap grx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>grd <Plug>(rust-doc)
