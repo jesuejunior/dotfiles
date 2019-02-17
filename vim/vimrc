@@ -377,7 +377,7 @@ endif
 
 """RUST
 set hidden
-let g:racer_cmd = "/home/${USER}/.cargo/bin/racer"
+let g:racer_cmd = "/Users/jesuejunior/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 au FileType rust nmap grd <Plug>(rust-def)
 au FileType rust nmap grs <Plug>(rust-def-split)
