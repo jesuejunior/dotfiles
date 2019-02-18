@@ -121,3 +121,9 @@ export PATH="$PATH:$HOME/code/coreutils/bin"
 alias xerpactl="$DOCA_ROOT/xerpactl"
 alias uvpn="sudo wg-quick up '$HOME/wireguard/wg0.conf'"
 alias dvpn="sudo wg-quick down '$HOME/wireguard/wg0.conf'"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc'; fi
