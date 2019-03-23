@@ -90,7 +90,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'Lokaltog/powerline'
-
+Plugin 'w0rp/ale'
 Plugin 'gmarik/Vundle.vim'
 
 """ Themes
@@ -154,6 +154,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'racer-rust/vim-racer'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()
 filetype plugin indent on     " required!
