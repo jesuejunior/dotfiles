@@ -31,6 +31,8 @@ then
     sudo easy_install pip
     sudo pip install --ignore-installed six
 	sudo pip install docker-compose
+    python3 get-pip.py
+    pip3 install --user python-language-server[all] isort
 	brew install gpg pinentry pinentry-mac asdf
 	brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
 fi
