@@ -149,12 +149,13 @@ Plugin 'jreybert/vimagit'
 Plugin 'EinfachToll/DidYouMean'
 Plugin 'elzr/vim-json' " checking for json files, highlighting errors
 Plugin 'daltonmatos/vim-virtualenv'
+Plugin 'terryma/vim-multiple-cursors' " Multiple selection feature into VIM
 
 " Old but works
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/surround.vim'
+Plugin 'tpope/vim-surround'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'mileszs/ack.vim'
@@ -216,9 +217,9 @@ call vundle#end()
 
 """ Colors
 "
+syntax on
 colorscheme kkruby
 set colorcolumn=120
-syntax on
 set background=dark
 if has('termguicolors')
   set termguicolors
@@ -294,7 +295,7 @@ let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
 
 """ NERDTree
 "
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.swp$']
 
 """ CTRLP
 "
