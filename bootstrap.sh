@@ -33,7 +33,7 @@ then
 	sudo pip install docker-compose
     python3 get-pip.py
     pip3 install --user python-language-server[all] isort
-	brew install gpg pinentry pinentry-mac asdf
+	brew install gpg pinentry pinentry-mac asdf pass pass-otp
 	brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
 fi
 
