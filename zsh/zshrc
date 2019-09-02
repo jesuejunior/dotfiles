@@ -31,7 +31,7 @@ ZSH_THEME="jj"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(python git vitualenvwrapper git-flow github django pip npm node postgres tmux vagrant debian docker docker-compose pep8 gulp nvm themes )
+plugins=(python git vitualenvwrapper git-flow github django pip npm node postgres tmux docker docker-compose pep8 nvm )
 
 source $ZSH/oh-my-zsh.sh
 eval "$(pipenv --completion)"
@@ -79,15 +79,11 @@ alias gpa='git remote update && git checkout master && git merge origin/master &
 alias tmux="TERM=screen-256color-bce tmux"
 
 alias yf="gpg-connect-agent updatestartuptty /bye"
-#For virtualenvwrapper
+#python
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-
-
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
-
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
-
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+eval "$(pyenv init -)"
 
 #Pat hto scala
 export LC_ALL="en_US.utf-8"
@@ -103,6 +99,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Ruby
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 

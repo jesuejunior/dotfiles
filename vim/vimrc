@@ -218,7 +218,7 @@ call vundle#end()
 """ Colors
 "
 syntax on
-colorscheme kkruby
+colorscheme base16-dracula
 set colorcolumn=120
 set background=dark
 if has('termguicolors')
