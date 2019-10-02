@@ -25,7 +25,7 @@ if [ `uname` = "Darwin" ]
 then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install python3 cmake tmux htop elixir ack git git-flow gnupg httpie jq zsh tree \
-	wget  
+	wget scala sbt
     brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
@@ -99,7 +99,7 @@ cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
 
 #Fixing youcompleteme plugin
-./vim/bundle/YouCompleteMe/install.py
+# ./vim/bundle/YouCompleteMe/install.py
 
 #Adding plugin to zsh-nvm
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
