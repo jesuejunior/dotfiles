@@ -16,8 +16,11 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 
 echo "Installing required packages" 
-sudo apt-get install curl git tmux zsh vim python-pip cmake build-essential dkms scala sbt ruby \
-	docker-ce guake libssl-dev libreadline-dev zlib1g-dev
+sudo apt-get install -y curl git tmux zsh vim python-pip cmake build-essential dkms scala sbt ruby \
+	docker-ce guake libssl-dev libreadline-dev zlib1g-dev pcscd scdaemon gnupg2 pcsc-tools libncursesw5-dev \
+	libgdbm-dev libc6-dev libssl-dev
+# Installing pyenv on Ubuntu
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 fi
 

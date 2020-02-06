@@ -31,7 +31,7 @@ ZSH_THEME="jj"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(python git vitualenvwrapper git-flow github django pip npm node postgres tmux docker docker-compose pep8 nvm )
+plugins=(python git git-flow github django pip npm node postgres tmux docker docker-compose pep8 nvm )
 
 source $ZSH/oh-my-zsh.sh
 eval "$(pipenv --completion)"
@@ -119,3 +119,13 @@ if [ -f '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 
 export GOOGLE_APPLICATION_CREDENTIALS=~/bigdata.terraform.json 
 export GOOGLE_CLOUD_KEYFILE_JSON=~/bigdata.terraform.json
+
+python -mplatform | grep -i Ubuntu
+if [ $? = 0 ]
+then
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init -)"
+	fi
+fi
