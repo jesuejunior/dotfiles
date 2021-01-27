@@ -26,10 +26,11 @@ fi
 
 if [ `uname` = "Darwin" ]
 then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install python3 cmake tmux htop elixir ack git git-flow gnupg httpie jq zsh tree \
-	wget scala sbt
-    brew install vim --with-python --with-ruby --with-perl
+    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install python3 cmake tmux htop elixir ack coreutils gnu-sed git git-flow gnupg httpie jq \
+    zsh tree wget scala sbt pyenv pipenv zbar
+    # brew install vim --with-python --with-ruby --with-perl
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
     sudo pip install --ignore-installed six
@@ -89,6 +90,7 @@ ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # GPG links
+sudo ln -snf `which gpg` /usr/local/bin/gpg
 ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
 ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf 
@@ -115,8 +117,8 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 
 
 #ASDF
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.2
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-
+# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.2
+# asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+# asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+# asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+#
