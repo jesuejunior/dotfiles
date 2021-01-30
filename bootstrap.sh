@@ -26,19 +26,23 @@ fi
 
 if [ `uname` = "Darwin" ]
 then
-    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew tap amar1729/formulaei
+    brew tap homebrew/cask-fonts
+    brew cask install font-hack-nerd-font font-source-code-pro
     brew install python3 cmake tmux htop elixir ack coreutils gnu-sed git git-flow gnupg httpie jq \
-    zsh tree wget scala sbt pyenv pipenv zbar
-    # brew install vim --with-python --with-ruby --with-perl
+    zsh tree wget scala sbt pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp
+    #brew install vim --with-python --with-ruby --with-perl
+
     brew install macvim --env-std --override-system-vim
     sudo easy_install pip
-    sudo pip install --ignore-installed six
+    #sudo pip install --ignore-installed six
 	sudo pip install docker-compose
     python3 get-pip.py
     pip3 install --user python-language-server[all] isort
-	brew install gpg pinentry pinentry-mac asdf pass pass-otp
-	brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
+	# activing browserpass extension
+	PREFIX='/usr/local/opt/browserpass' make hosts-firefox-user -f /usr/local/opt/browserpass/lib/browserpass/Makefile
+	PREFIX='/usr/local/opt/browserpass' make hosts-chrome-user -f /usr/local/opt/browserpass/lib/browserpass/Makefile
 fi
 
 python -mplatform | grep -i centos
