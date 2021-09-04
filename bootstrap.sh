@@ -27,11 +27,12 @@ fi
 if [ `uname` = "Darwin" ]
 then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew tap amar1729/formulaei
+    brew tap Amar1729/homebrew-formulae
     brew tap homebrew/cask-fonts
     brew cask install font-hack-nerd-font font-source-code-pro
-    brew install python3 cmake tmux htop elixir ack coreutils gnu-sed git git-flow gnupg httpie jq \
-    zsh tree wget scala sbt pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp
+    brew install python3 cmake tmux htop ack coreutils gnu-sed git git-flow gnupg httpie jq \
+    zsh tree wget scala sbt pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp \
+    librdkafka
     #brew install vim --with-python --with-ruby --with-perl
 
     brew install macvim --env-std --override-system-vim
@@ -112,6 +113,9 @@ vim +PluginInstall +qall
 
 #Adding plugin to zsh-nvm
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+
+# install sdkman
+curl -s "https://get.sdkman.io" | bash
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 cd ~/.rbenv; src/configure && make -C src && ./src/configure
