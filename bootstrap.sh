@@ -1,9 +1,19 @@
-# Starting configuration, checking by SO 
+# Starting configuration, checking by SO
+python -mplatform | grep -i MANJARO
+if [ $? = 0 ]
+then
+ sudo pacman -Suy dkms docker sbt scala maven pinentry pcsc-tools ack pass pass-otp jq browserpass pyenv python-pip poetry --noconfirm
+ sudo pacman -Syu $(pacman -Qsq "^linux" | grep "^linux[0-9]*[-rt]*$" | awk '{print $1"-headers"}' ORS=' ') --noconfirm
+ sudo usermod -aG docker $USER
+ sudo systemctl enable docker
+ sudo systemctl start docker
+fi
+
 python -mplatform | grep -i Ubuntu
 if [ $? = 0 ]
 then
 
-echo "Configuring and installing docker" 
+echo "Configuring and installing docker"
 
 echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
@@ -15,7 +25,7 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 
-echo "Installing required packages" 
+echo "Installing required packages"
 sudo apt-get install -y curl git tmux zsh vim python-pip cmake build-essential dkms scala sbt ruby \
 	docker-ce guake libssl-dev libreadline-dev zlib1g-dev pcscd scdaemon gnupg2 pcsc-tools libncursesw5-dev \
 	libgdbm-dev libc6-dev libssl-dev
@@ -101,7 +111,7 @@ ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
 ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf 
 
 # Emacs
-ln -snf ~/dotfiles/emacs/.spacemacs ~/.spacemacs
+#ln -snf ~/dotfiles/emacs/.spacemacs ~/.spacemacs
 
 sudo pip install virtualenvwrapper
 # Install fonts pretty good
@@ -117,11 +127,11 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 # install sdkman
 curl -s "https://get.sdkman.io" | bash
 
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-cd ~/.rbenv; src/configure && make -C src && ./src/configure
-rbenv init
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+#git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+#cd ~/.rbenv; src/configure && make -C src && ./src/configure
+#rbenv init
+#mkdir -p "$(rbenv root)"/plugins
+#git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
 
 #ASDF
