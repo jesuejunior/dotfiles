@@ -2,11 +2,21 @@
 python -mplatform | grep -i MANJARO
 if [ $? = 0 ]
 then
- sudo pacman -Suy dkms docker sbt scala maven pinentry pcsc-tools ack pass pass-otp jq browserpass pyenv python-pip poetry --noconfirm
+ sudo pacman -Suy dkms tmux ntfs-3g bluez-tools bluez-utils mypaint thunderbird chromium browserpass-chromium browserpass-firefox xclip docker sbt scala maven pinentry pcsc-tools ack pass pass-otp jq browserpass pyenv python-pip poetry simplescreenrecorder aws-cli --noconfirm
  sudo pacman -Syu $(pacman -Qsq "^linux" | grep "^linux[0-9]*[-rt]*$" | awk '{print $1"-headers"}' ORS=' ') --noconfirm
  sudo usermod -aG docker $USER
+ sudo usermod -aG users $USER
+ sudo usermod -aG storage $USER
+ sudo usermod -aG disk $USER
+ sudo usermod -aG wheel $USER
  sudo systemctl enable docker
  sudo systemctl start docker
+ pamac build brightness-controller-git
+ pamac build digimend-kernel-drivers-dkms-git
+
+ #TODO: Install firefox nighly from url and create shortcut
+ gpg --import ~/dotfiles/gpg/jesuejunior.pub
+ git clone git@github.com:jesuejunior/pass.git ~/.password-store
 fi
 
 python -mplatform | grep -i Ubuntu
@@ -60,7 +70,7 @@ python -mplatform | grep -i centos
 if [ $? = 0 ]
 then
     sudo yum update -y
-    sudo yum install -y cmake python-devel zsh git python-pip yum-utils \ 
+    sudo yum install -y cmake python-devel zsh git python-pip yum-utils \
     gcc kernel-devel kernel-headers make bzip2 cmake epel-release \
     tmux dkms python-devel mysql-devel net-tools htop vim
     sudo yum groupinstall "Development Tools" -y
@@ -84,9 +94,9 @@ cargo +nightly install racer
 rustup component add rust-src
 
 # get oh my zsh
-curl -L http://install.ohmyz.sh | sh && chsh -s /bin/zsh
+curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
 
-mkdir ~/gocode ~/code ~/.ssh 
+mkdir ~/gocode ~/code ~/.ssh
 cd ~/dotfiles
 
 git submodule init && git submodule update
@@ -108,7 +118,7 @@ ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 sudo ln -snf `which gpg` /usr/local/bin/gpg
 ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
-ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf 
+ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 # Emacs
 #ln -snf ~/dotfiles/emacs/.spacemacs ~/.spacemacs
@@ -117,9 +127,6 @@ sudo pip install virtualenvwrapper
 # Install fonts pretty good
 cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
-
-#Fixing youcompleteme plugin
-# ./vim/bundle/YouCompleteMe/install.py
 
 #Adding plugin to zsh-nvm
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
@@ -133,10 +140,3 @@ curl -s "https://get.sdkman.io" | bash
 #mkdir -p "$(rbenv root)"/plugins
 #git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-
-#ASDF
-# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.2
-# asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-# asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-# asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-#
