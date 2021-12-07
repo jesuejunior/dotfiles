@@ -235,7 +235,7 @@ call vundle#end()
 """ Colors
 "
 syntax on
-colorscheme molokai_dark 
+colorscheme "molokai_dark"
 set colorcolumn=120
 set background=dark
 if has('termguicolors')
