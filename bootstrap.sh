@@ -2,17 +2,16 @@
 python -mplatform | grep -i MANJARO
 if [ $? = 0 ]
 then
- sudo pacman -Suy dkms tmux ntfs-3g bluez-tools bluez-utils mypaint thunderbird chromium browserpass-chromium browserpass-firefox xclip docker sbt scala maven pinentry pcsc-tools ack pass pass-otp jq browserpass pyenv python-pip poetry simplescreenrecorder aws-cli --noconfirm
+ sudo pacman -Suy dkms tmux ntfs-3g bluez-tools bluez-utils mypaint gimp thunderbird chromium browserpass-chromium browserpass-firefox xclip htop docker docker-compose sbt scala maven pinentry pcsc-tools ack pass pass-otp jq browserpass pyenv python-pip poetry simplescreenrecorder aws-cli --noconfirm
  sudo pacman -Syu $(pacman -Qsq "^linux" | grep "^linux[0-9]*[-rt]*$" | awk '{print $1"-headers"}' ORS=' ') --noconfirm
- sudo usermod -aG docker $USER
- sudo usermod -aG users $USER
- sudo usermod -aG storage $USER
- sudo usermod -aG disk $USER
- sudo usermod -aG wheel $USER
+ sudo usermod -aG docker jj
+ sudo usermod -aG users jj
+ sudo usermod -aG storage jj
+ sudo usermod -aG disk jj
+ sudo usermod -aG wheel jj
  sudo systemctl enable docker
  sudo systemctl start docker
- pamac build brightness-controller-git
- pamac build digimend-kernel-drivers-dkms-git
+ pamac build brightness-controller-git protonvpn protonmail-bridge digimend-kernel-drivers-dkms-git slack-desktop spotify
 
  #TODO: Install firefox nighly from url and create shortcut
  gpg --import ~/dotfiles/gpg/jesuejunior.pub
