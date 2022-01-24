@@ -93,6 +93,7 @@ sudo ln -snf `which gpg` /usr/local/bin/gpg
 ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
 ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+gpg-connect-agent updatestartuptty /bye
 
 # sudo pip install virtualenvwrapper
 # Install fonts pretty good
