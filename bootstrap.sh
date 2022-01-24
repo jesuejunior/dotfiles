@@ -14,7 +14,7 @@ then
  pamac build brightness-controller-git protonvpn protonmail-bridge digimend-kernel-drivers-dkms-git slack-desktop spotify
 
  #TODO: Install firefox nighly from url and create shortcut
- gpg --import ~/dotfiles/gpg/jesuejunior.pub
+ gpg --import ~/dotfiles/gpg/jesue.pub
  git clone git@github.com:jesuejunior/pass.git ~/.password-store
 fi
 
@@ -23,10 +23,8 @@ if [ $? = 0 ]
 then
 
 echo "Configuring and installing docker"
-
 echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -51,51 +49,27 @@ then
     brew cask install font-hack-nerd-font font-source-code-pro
     brew install python3 cmake tmux htop ack coreutils gnu-sed git git-flow gnupg httpie jq \
     zsh tree wget scala sbt pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp \
-    librdkafka
-    #brew install vim --with-python --with-ruby --with-perl
-
-    brew install macvim --env-std --override-system-vim
-    sudo easy_install pip
-    #sudo pip install --ignore-installed six
-	sudo pip install docker-compose
+    librdkafka gpg chromium vim
+    # brew install macvim --env-std --override-system-vim
     python3 get-pip.py
-    pip3 install --user python-language-server[all] isort
+	sudo pip3 install -U pip docker-compose
+    # pip3 install --user python-language-server[all] isort
 	# activing browserpass extension
 	PREFIX='/usr/local/opt/browserpass' make hosts-firefox-user -f /usr/local/opt/browserpass/lib/browserpass/Makefile
 	PREFIX='/usr/local/opt/browserpass' make hosts-chrome-user -f /usr/local/opt/browserpass/lib/browserpass/Makefile
 fi
 
-python -mplatform | grep -i centos
-if [ $? = 0 ]
-then
-    sudo yum update -y
-    sudo yum install -y cmake python-devel zsh git python-pip yum-utils \
-    gcc kernel-devel kernel-headers make bzip2 cmake epel-release \
-    tmux dkms python-devel mysql-devel net-tools htop vim
-    sudo yum groupinstall "Development Tools" -y
-    sudo yum-builddep python
-    curl -O https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tgz
-    tar xf Python-3.5.0.tgz
-    cd Python-3.5.0
-    ./configure
-    make
-    sudo make install
-    cd ..
-    sudo rm -rf Python-3.5.0*
-fi
-
 # Isntalling rust and racer to vim
-curl https://sh.rustup.rs -sSf | sh
-rustup default nightly
-rustup component add racer
-rustup toolchain add nightly
-cargo +nightly install racer
-rustup component add rust-src
+# curl https://sh.rustup.rs -sSf | sh
+# rustup default nightly
+# rustup component add racer
+# rustup toolchain add nightly
+# cargo +nightly install racer
+# rustup component add rust-src
 
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
-
-mkdir ~/gocode ~/code ~/.ssh
+mkdir -p ~/code ~/.ssh
 cd ~/dotfiles
 
 git submodule init && git submodule update
@@ -114,15 +88,13 @@ ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # GPG links
+sudo mkdir -p /usr/local/bin
 sudo ln -snf `which gpg` /usr/local/bin/gpg
 ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
 ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
-# Emacs
-#ln -snf ~/dotfiles/emacs/.spacemacs ~/.spacemacs
-
-sudo pip install virtualenvwrapper
+# sudo pip install virtualenvwrapper
 # Install fonts pretty good
 cd ~/dotfiles/fonts && bash install.sh
 vim +PluginInstall +qall
@@ -131,11 +103,5 @@ vim +PluginInstall +qall
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
 # install sdkman
-curl -s "https://get.sdkman.io" | bash
-
-#git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-#cd ~/.rbenv; src/configure && make -C src && ./src/configure
-#rbenv init
-#mkdir -p "$(rbenv root)"/plugins
-#git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+curl -s "https://get.sdkman.io" | sudo bash
 

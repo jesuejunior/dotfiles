@@ -45,7 +45,6 @@ fi
 
 # Customize to your needs...
 #alias vim='/usr/local/Cellar/vim/7.4.052/bin/vim'
-alias vim="nvim"
 alias gf='git flow '
 alias gcm='git commit -m'
 alias gckm='git checkout master'
