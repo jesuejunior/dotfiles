@@ -46,15 +46,15 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew tap Amar1729/homebrew-formulae
     brew tap homebrew/cask-fonts
-    brew cask install font-hack-nerd-font font-source-code-pro
+    brew install --cask font-hack-nerd-font font-source-code-pro
     brew install python3 cmake tmux htop ack coreutils gnu-sed git git-flow gnupg httpie jq \
     zsh tree wget pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp \
-    gpg chromium vim
-    # brew install macvim --env-std --override-system-vim
+    gpg nvim pipx
     python3 get-pip.py
 	sudo pip3 install -U pip docker-compose
-    # pip3 install --user python-language-server[all] isort
-	# activing browserpass extension
+	pipx install poetry
+	poetry self add poetry-dotenv-plugin
+	# browserpass extension activation
 	#PREFIX='/opt/homebrew/opt/browserpass' make hosts-chromium-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'
 	PREFIX='/opt/homebrew/opt/browserpass' make hosts-chrome-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'	
 	PREFIX='/opt/homebrew/opt/browserpass' make hosts-firefox-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'
