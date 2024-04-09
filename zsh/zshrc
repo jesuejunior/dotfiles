@@ -155,3 +155,5 @@ if [ -f '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 
 # Github Mino
 export CR_PAT=
+
+export HOMEBREW_NO_ANALYTICS=1
