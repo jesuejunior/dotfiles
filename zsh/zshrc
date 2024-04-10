@@ -30,7 +30,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(python git git-flow github django pip npm node postgres tmux docker docker-compose pep8 nvm )
+plugins=(python git git-flow github django pip node postgres tmux docker docker-compose pep8 )
 
 source $ZSH/oh-my-zsh.sh
 eval $(/opt/homebrew/bin/brew shellenv)
@@ -86,17 +86,17 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 eval "$(pyenv init -)"
 
 #Path to Scala
-export LC_ALL="en_US.utf-8"
-export SCALA_HOME=/usr/local/scala
-export PATH=$PATH:$SCALA_HOME/bin
+#export LC_ALL="en_US.utf-8"
+#export SCALA_HOME=/usr/local/scala
+#export PATH=$PATH:$SCALA_HOME/bin
 
 #Path to golang
-export GOPATH=~/gocode
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH=~/gocode
+#export PATH=$PATH:$GOPATH/bin
 
 #Path to NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Ruby
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -108,8 +108,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jesuejunior/.sdkman"
-[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/Users/jesuejunior/.sdkman"
+#[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 python -mplatform | grep -i Ubuntu
 if [ $? = 0 ]
@@ -125,6 +125,7 @@ fi
 # export GOOGLE_CLOUD_KEYFILE_JSON=~/datalabs-jesuejunior.json
 
 
+#TODO: create a if it is mac or linux
 #Postgres libpg configs
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
@@ -132,7 +133,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
 
 # MYSQL client
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+#export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # Work
 export VAULT_ADDR=https://
@@ -145,7 +146,7 @@ export GITHUB_USER=jesuejunior
 export GITHUB_USER_TOKEN=
 export SLACK_TOKEN=
 
-export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
+#export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc'; fi
@@ -153,7 +154,3 @@ if [ -f '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jes
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Github Mino
-export CR_PAT=
-
-export HOMEBREW_NO_ANALYTICS=1
