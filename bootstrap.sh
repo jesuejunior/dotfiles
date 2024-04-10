@@ -23,8 +23,8 @@ if [ $? = 0 ]
 then
 
 echo "Configuring and installing docker"
-echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+#echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common unzip jq htop
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -33,11 +33,11 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 
 echo "Installing required packages"
-sudo apt-get install -y curl git tmux zsh vim python-pip cmake build-essential dkms scala sbt ruby \
-	docker-ce guake libssl-dev libreadline-dev zlib1g-dev pcscd scdaemon gnupg2 pcsc-tools libncursesw5-dev \
+sudo apt-get install -y curl git tmux zsh vim python-pip cmake build-essential \
+	docker-ce libssl-dev libreadline-dev zlib1g-dev pcscd scdaemon gnupg2 pcsc-tools libncursesw5-dev \
 	libgdbm-dev libc6-dev libssl-dev
 # Installing pyenv on Ubuntu
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+#git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 fi
 
@@ -48,20 +48,21 @@ then
     brew tap homebrew/cask-fonts
     brew cask install font-hack-nerd-font font-source-code-pro
     brew install python3 cmake tmux htop ack coreutils gnu-sed git git-flow gnupg httpie jq \
-    zsh tree wget scala sbt pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp \
-    librdkafka gpg chromium vim
+    zsh tree wget pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp \
+    gpg chromium vim
     # brew install macvim --env-std --override-system-vim
     python3 get-pip.py
 	sudo pip3 install -U pip docker-compose
     # pip3 install --user python-language-server[all] isort
 	# activing browserpass extension
-	PREFIX='/usr/local/opt/browserpass' make hosts-firefox-user -f /usr/local/opt/browserpass/lib/browserpass/Makefile
-	PREFIX='/usr/local/opt/browserpass' make hosts-chrome-user -f /usr/local/opt/browserpass/lib/browserpass/Makefile
+	#PREFIX='/opt/homebrew/opt/browserpass' make hosts-chromium-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'
+	PREFIX='/opt/homebrew/opt/browserpass' make hosts-chrome-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'	
+	PREFIX='/opt/homebrew/opt/browserpass' make hosts-firefox-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'
 fi
 
 # Isntalling rust and racer to vim
-# curl https://sh.rustup.rs -sSf | sh
-# rustup default nightly
+curl https://sh.rustup.rs -sSf | sh
+rustup default nightly
 # rustup component add racer
 # rustup toolchain add nightly
 # cargo +nightly install racer
@@ -98,10 +99,10 @@ gpg-connect-agent updatestartuptty /bye
 # sudo pip install virtualenvwrapper
 # Install fonts pretty good
 cd ~/dotfiles/fonts && bash install.sh
-vim +PluginInstall +qall
+#vim +PluginInstall +qall
 
 #Adding plugin to zsh-nvm
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+#git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
 # install sdkman
 #curl -s "https://get.sdkman.io" | sudo bash
