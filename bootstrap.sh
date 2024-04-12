@@ -14,8 +14,6 @@ then
  pamac build brightness-controller-git protonvpn protonmail-bridge digimend-kernel-drivers-dkms-git slack-desktop spotify
 
  #TODO: Install firefox nighly from url and create shortcut
- gpg --import ~/dotfiles/gpg/jesue.pub
- git clone git@github.com:jesuejunior/pass.git ~/.password-store
 fi
 
 python -mplatform | grep -i Ubuntu
@@ -52,7 +50,7 @@ then
     gpg nvim pipx
     python3 get-pip.py
 	sudo pip3 install -U pip docker-compose
-	pipx install poetry
+	sudo pipx install poetry
 	poetry self add poetry-dotenv-plugin
 	# browserpass extension activation
 	#PREFIX='/opt/homebrew/opt/browserpass' make hosts-chromium-user -f '/opt/homebrew/opt/browserpass/lib/browserpass/Makefile'
@@ -70,7 +68,7 @@ rustup default nightly
 
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
-mkdir -p ~/code ~/.ssh
+mkdir -p ~/code ~/.ssh ~/.gnupg
 cd ~/dotfiles
 
 git submodule init && git submodule update
@@ -95,6 +93,8 @@ ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -snf ~/dotfiles/gpg/sshcontrol ~/.gnupg/sshcontrol
 ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 gpg-connect-agent updatestartuptty /bye
+gpg --import gpg/jesuejunior.pub
+git clone git@github.com:jesuejunior/pass.git ~/.password-store
 
 # sudo pip install virtualenvwrapper
 # Install fonts pretty good
