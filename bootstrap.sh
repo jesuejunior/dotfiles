@@ -59,7 +59,7 @@ then
 fi
 
 # Isntalling rust and racer to vim
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 rustup default nightly
 # rustup component add racer
 # rustup toolchain add nightly
@@ -69,9 +69,12 @@ cargo install cross --git https://github.com/cross-rs/cross
 
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
-mkdir -p ~/code ~/.ssh ~/.gnupg
-cd ~/dotfiles
 
+if [[ ! -z "${IS_CODESPACE}" ]]; then
+    ln -sf /workspaces/.codespaces/.persistedshare/dotfiles ~/dotfiles
+fi
+
+cd ~/dotfiles
 git submodule init && git submodule update
 
 cp ~/dotfiles/zsh/themes/jj.zsh-theme ~/.oh-my-zsh/themes/
@@ -88,6 +91,8 @@ ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # GPG links
+if [[ -z "${IS_CODESPACE}" ]]; then
+mkdir -p ~/code ~/.ssh ~/.gnupg
 sudo mkdir -p /usr/local/bin
 sudo ln -snf `which gpg` /usr/local/bin/gpg
 ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
@@ -96,10 +101,8 @@ ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 gpg-connect-agent updatestartuptty /bye
 gpg --import gpg/jesuejunior.pub
 git clone git@github.com:jesuejunior/pass.git ~/.password-store
-
 gpgconf --kill gpg-agent
 
-# sudo pip install virtualenvwrapper
 # Install fonts pretty good
 cd ~/dotfiles/fonts && bash install.sh
 #vim +PluginInstall +qall
@@ -109,4 +112,4 @@ cd ~/dotfiles/fonts && bash install.sh
 
 # install sdkman
 #curl -s "https://get.sdkman.io" | sudo bash
-
+fi
