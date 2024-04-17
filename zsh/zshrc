@@ -132,27 +132,15 @@ export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
 
-# MYSQL client
-#export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
-# Work
-export VAULT_ADDR=https://
-export VAULT_CACERT=~/.pem
-export VAULT_TOKEN=
-
-export NEXUS_USERNAME=jj
-export NEXUS_PASSWORD=
 export GITHUB_USER=jesuejunior
 export GITHUB_USER_TOKEN=
 export SLACK_TOKEN=
 
-#export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
 
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
@@ -162,4 +150,3 @@ export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@13/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@13/include"
 
-export PATH="$PATH:$HOME/.local/bin"
