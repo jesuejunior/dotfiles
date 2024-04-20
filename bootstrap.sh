@@ -47,7 +47,7 @@ then
     brew install --cask font-hack-nerd-font font-source-code-pro
     brew install python3 cmake tmux htop ack coreutils gnu-sed git git-flow gnupg httpie jq \
     zsh tree wget pyenv pipenv zbar browserpass gpg pinentry pinentry-mac pass pass-otp \
-    gpg nvim pipx
+    gpg nvim pipx protobuf postgresql openssl@1.1
     python3 get-pip.py
 	sudo pip3 install -U pip docker-compose
 	sudo pipx install poetry
@@ -65,6 +65,7 @@ rustup default nightly
 # rustup toolchain add nightly
 # cargo +nightly install racer
 # rustup component add rust-src
+cargo install cross --git https://github.com/cross-rs/cross
 
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
@@ -95,6 +96,8 @@ ln -snf ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 gpg-connect-agent updatestartuptty /bye
 gpg --import gpg/jesuejunior.pub
 git clone git@github.com:jesuejunior/pass.git ~/.password-store
+
+gpgconf --kill gpg-agent
 
 # sudo pip install virtualenvwrapper
 # Install fonts pretty good

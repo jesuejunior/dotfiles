@@ -154,4 +154,12 @@ if [ -f '/Users/jesuejunior/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jes
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jesuejunior/google-cloud-sdk/completion.zsh.inc'; fi
 
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@13/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@13/include"
+
 export PATH="$PATH:$HOME/.local/bin"
