@@ -68,7 +68,7 @@ rustup default nightly
 cargo install cross --git https://github.com/cross-rs/cross
 
 if [[ ! -z "${IS_CODESPACE}" ]]; then
-	echo "It is running on codespaces"
+	echo "######## It is running on codespaces ######################"
     ln -sf /workspaces/.codespaces/.persistedshare/dotfiles ~/dotfiles
 
 	# Trying to change to zsh without ask password
@@ -79,7 +79,7 @@ fi
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
 
-
+mkdir -p ~/code ~/.ssh ~/.gnupg
 cd ~/dotfiles
 git submodule init && git submodule update
 
@@ -98,7 +98,6 @@ ln -snf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # GPG links
 if [[ -z "${IS_CODESPACE}" ]]; then
-mkdir -p ~/code ~/.ssh ~/.gnupg
 sudo mkdir -p /usr/local/bin
 sudo ln -snf `which gpg` /usr/local/bin/gpg
 ln -snf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
