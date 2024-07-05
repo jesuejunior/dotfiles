@@ -67,12 +67,18 @@ rustup default nightly
 # rustup component add rust-src
 cargo install cross --git https://github.com/cross-rs/cross
 
+if [[ ! -z "${IS_CODESPACE}" ]]; then
+	echo "It is running on codespaces"
+    ln -sf /workspaces/.codespaces/.persistedshare/dotfiles ~/dotfiles
+
+	# Trying to change to zsh without ask password
+	grep -qxF "$(which zsh)" "/etc/shells" || sudo bash -c "echo $(which zsh) >> /etc/shells"
+	grep -qxF "$(which zsh)" "/etc/shells" && sudo chsh -s "$(which zsh)" "$(whoami)"
+fi
+
 # get oh my zsh
 curl -L http://install.ohmyz.sh | sh && chsh -s `which zsh`
 
-if [[ ! -z "${IS_CODESPACE}" ]]; then
-    ln -sf /workspaces/.codespaces/.persistedshare/dotfiles ~/dotfiles
-fi
 
 cd ~/dotfiles
 git submodule init && git submodule update
