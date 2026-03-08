@@ -1,134 +1,278 @@
-Innitial DOCS
+# dotfiles
 
+## Vim shortcuts
 
-### shortcuts
+> `<leader>` is mapped to `Space`
+
+### File & Navigation
 
 mode    | shortcut              | description
 --------|-----------------------|-------------------------------------------
-NORMAL  | ;                     | the same as the colon key, so that you don't need to use SHIFT C (pressckly) |
-NORMAL  | gcc                   | comment the current line of code |
-NORMAL  | F2                    | toggle the NERDTree panel (directories and files) |
-NORMAL  | F3                    | toggle the TagBar panel |
-NORMAL  | F7                    | invoke the Flake8 (Python code verification) |
-NORMAL  | ,,w                   | activate the EasyMotion (try press the H command first) |
-NORMAL  | CTRL + P              | activate the CtrlP plugin; press ENTER to open the file(s) in a new tab |
-INSERT  | Ctrl + e              | html code templates with Sparkup (must be editing a HTML file) |
-NORMAL  | TAB                   | indent preserving visual selection |
-NORMAL  | SHIFT + TAB           | unindent preserving visual selection |
-ANY     | CTRL + right arrow    | go to the next tab |
-ANY     | CTRL + left arrow     | go to the previuos tab |
-ANY     | CTRL + h              | set the focus on the left window |
-ANY     | CTRL + l              | set the focus on the right window |
-ANY     | CTRL + j              | set the focus on the window below |
-ANY     | CTRL + k              | set the focus on the window above |
-NORMAL  | LF                    | locate the file in the NERDTree panel | 
-VISUAL  | Ctrl + P              | duplicate the selected block of code |
+NORMAL  | `Ctrl + p`            | FZF — fuzzy find files in project
+NORMAL  | `<leader>b`           | FZF — switch between open buffers
+NORMAL  | `<leader>rg`          | FZF — ripgrep search across project
+NORMAL  | `<leader>/`           | FZF — search lines in current buffer
+NORMAL  | `F2`                  | toggle NERDTree panel
+NORMAL  | `LF`                  | reveal current file in NERDTree
+NORMAL  | `F3`                  | toggle Tagbar panel
+NORMAL  | `<leader>a`           | search word under cursor with Ack
 
-### Vim shortcuts
+### LSP (Language Server)
 
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `<leader>cd`          | go to definition
+NORMAL  | `<leader>/cd`         | go to definition in vertical split
+NORMAL  | `<leader>cr`          | find references
+NORMAL  | `<leader>ci`          | go to implementation
+NORMAL  | `<leader>ct`          | go to type definition
+NORMAL  | `<leader>crn`         | rename symbol
+NORMAL  | `K`                   | hover documentation
+NORMAL  | `[g`                  | previous diagnostic
+NORMAL  | `]g`                  | next diagnostic
 
-Key | Cursor movement
-----------------|------------------
-h |	move cursor left |
-j |	move cursor down |
-k |	move cursor up |
-l |	move cursor right |
-w | 	jump forwards to the start of a word |
-W |	jump forwards to the start of a word (words can contain punctuation) |
-e |	jump forwards to the end of a word |
-E |	jump forwards to the end of a word (words can contain punctuation) |
-b |	jump backwards to the start of a word |
-B |	jump backwards to the start of a word (words can contain punctuation) |
-0 |	jump to the start of the line |
-^ |	jump to the first non-blank character of the line |
-$ |	jump to the end of the line |
-G |	go to the last line of the document |
-5G |	go to line 5 |
-'' |	To the position before the latest jump, / where the last "m'" / "m`" command was given. |
+### ALE (Linting)
 
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `Ctrl + k`            | jump to previous error/warning
+NORMAL  | `Ctrl + j`            | jump to next error/warning
+NORMAL  | `<leader>cf`          | find references (ALE)
+INSERT  | `Ctrl + Space`        | trigger completion
 
-Key | Insert mode - inserting/appending text
-----|----------------------------------------
-i |	insert before the cursor | 
-I |	insert at the beginning of the line |
-a |	insert (append) after the cursor |
-A |	insert (append) at the end of the line |
-o |	append (open) a new line below the current line |
-O |	append (open) a new line above the current line |
-ea |	insert (append) at the end of the word |
-Esc |	exit insert mode |
+### Git (Fugitive)
 
-Key| Editing
----|-----------
-r |	replace a single character | 
-J |	join line below to the current one | 
-cc |	change (replace) entire line | 
-cw |	change (replace) to the end of the word | 
-c$ |	change (replace) to the end of the line | 
-s |	delete character and substitute text |
-S |	delete line and substitute text (same as cc) |
-xp |	transpose two letters (delete and paste) |
-u |	undo |
-Ctrl + r |	redo |
-. |	repeat last command |
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `<leader>gs`          | git status (fugitive)
+NORMAL  | `<leader>gd`          | git diff (vertical split)
+NORMAL  | `<leader>gp`          | git push
+NORMAL  | `<leader>gP`          | git push --force
+NORMAL  | `<leader>gpr`         | git pull --rebase
+NORMAL  | `<leader>dp`          | diffput (accept current change)
+NORMAL  | `<leader>dg`          | diffget (accept incoming change)
 
+### Diff mode
 
-Key | Marking text (visual mode)
-----|----------------------------
-v |	start visual mode, mark lines, then do a command (like y-yank) |
-V |	start linewise visual mode |
-o |	move to other end of marked area |
-Ctrl + v |	start visual block mode |
-O |	move to other corner of block |
-aw |	mark a word |
-ab |	a block with () |
-aB |	a block with {} |
-ib |	inner block with () |
-iB |	inner block with {} |
-Esc |	exit visual mode |
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+ANY     | `F5`                  | diffget LOCAL
+ANY     | `F6`                  | diffget BASE
+ANY     | `F7`                  | diffget REMOTE
 
-Key | Visual commands
-----|----------------
-> |	shift text right |
-< |	shift text left |
-y |	yank (copy) marked text |
-d |	delete marked text |
-~ |	switch case |
+### Testing (vim-test)
 
-Key | Cut and paste
-----|--------------
-yy |	yank (copy) a line |
-2yy |	yank (copy) 2 lines |
-yw |	yank (copy) word |
-y$ |	yank (copy) to end of line |
-p |	put (paste) the clipboard after cursor |
-P |	put (paste) before cursor |
-dd |	delete (cut) a line |
-2dd |	delete (cut) 2 lines |
-dw |	delete (cut) word |
-D |	delete (cut) to the end of the line |
-d$ |	delete (cut) to the end of the line |
-x |	delete (cut) character |
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `<leader>tm`          | run nearest test
+NORMAL  | `<leader>tf`          | run tests in current file
+NORMAL  | `<leader>tp`          | run full test suite
 
-Key | Exiting
-----|--------
-:w |	write (save) the file, but don't exit |
-:wq |	write (save) and quit |
-:x |	write (save) and quit |
-:q |	quit (fails if there are unsaved changes) |
-:q! |	quit and throw away unsaved changes |
+### Terminal
 
-Command | Search and replace
---------|-------------------
-\* |	search for word under cursor |
-/pattern |	search for pattern |
-?pattern |	search backward for pattern |
-n |	repeat search in same direction |
-N |	repeat search in opposite direction |
-:%s/old/new/g |	replace all old with new throughout file |
-:%s/old/new/gc |	replace all old with new throughout file with confirmations |
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `<leader>t`           | open terminal in split at bottom
+TERMINAL| `Esc`                 | return to previous window
 
-Command | Tabs
---------|-----
-Ctrl + l |	move to the next tab |
-Ctrl + h |	move to the previous tab |
+### EasyMotion
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `<leader>mw`          | jump forward by word
+NORMAL  | `<leader>mW`          | jump forward by WORD
+NORMAL  | `<leader>mb`          | jump backward by word
+NORMAL  | `<leader>mB`          | jump backward by WORD
+NORMAL  | `<leader>ms`          | jump to 2-char search match
+
+### Editing
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `;`                   | same as `:` (no shift needed)
+NORMAL  | `gcc`                 | comment/uncomment current line
+VISUAL  | `gc`                  | comment/uncomment selection
+VISUAL  | `Tab`                 | indent selection (preserves highlight)
+VISUAL  | `Shift + Tab`         | unindent selection (preserves highlight)
+VISUAL  | `Ctrl + p`            | duplicate selected block
+INSERT  | `Ctrl + e`            | expand UltiSnips snippet
+NORMAL  | `Ctrl + s`            | save file (GUI only)
+
+### UI
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `F8`                  | toggle paste mode (disable auto-indent for pasting)
+NORMAL  | `F9`                  | toggle dark (Sonokai) / light (PaperColor) theme
+
+### FZF
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `Ctrl + p`            | open FZF file finder
+NORMAL  | `<leader>rg`          | search file contents with ripgrep
+NORMAL  | `<leader>b`           | search across open buffers
+NORMAL  | `<leader>/`           | search lines in current buffer
+FZF     | type anything         | fuzzy filter results
+FZF     | `Enter`               | open in current window
+FZF     | `Ctrl + t`            | open in new tab
+FZF     | `Ctrl + v`            | open in vertical split
+FZF     | `Ctrl + x`            | open in horizontal split
+FZF     | `Ctrl + j / k`        | move down/up in results
+FZF     | `Esc`                 | close without opening
+
+### NERDTree
+
+mode      | shortcut              | description
+----------|-----------------------|-------------------------------------------
+NORMAL    | `F2`                  | toggle NERDTree panel
+NORMAL    | `LF`                  | reveal current file in NERDTree
+NORMAL    | `Ctrl + w h`          | move focus into NERDTree (left)
+NORMAL    | `Ctrl + w l`          | move focus out of NERDTree (right)
+NORMAL    | `Ctrl + w w`          | toggle focus between NERDTree and file
+NERDTREE  | `Enter`               | open file / expand folder
+NERDTREE  | `o`                   | open file in horizontal split
+NERDTREE  | `v`                   | open file in vertical split
+NERDTREE  | `t`                   | open file in new tab
+NERDTREE  | `m`                   | open menu (create, rename, delete)
+NERDTREE  | `R`                   | refresh tree
+NERDTREE  | `q`                   | close NERDTree
+
+### Tabs
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+ANY     | `Ctrl + l`            | next tab
+ANY     | `Ctrl + h`            | previous tab
+ANY     | `Ctrl + n`            | new tab
+NORMAL  | `gt`                  | next tab (vim native)
+NORMAL  | `gT`                  | previous tab (vim native)
+NORMAL  | `2gt`                 | jump to tab number 2
+NORMAL  | `:tabnew filename`    | open file in new tab
+NORMAL  | `:tabclose`           | close current tab
+NORMAL  | `:tabonly`            | close all other tabs
+FZF     | `Ctrl + t`            | open FZF result in a new tab
+
+### Splits
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `:sp filename`        | horizontal split (file below)
+NORMAL  | `:vsp filename`       | vertical split (file on right)
+NORMAL  | `Ctrl + w h`          | move to split on the left
+NORMAL  | `Ctrl + w l`          | move to split on the right
+NORMAL  | `Ctrl + w j`          | move to split below
+NORMAL  | `Ctrl + w k`          | move to split above
+NORMAL  | `Ctrl + w w`          | cycle through splits
+NORMAL  | `Ctrl + w =`          | equalize all split sizes
+NORMAL  | `Ctrl + w +`          | increase split height
+NORMAL  | `Ctrl + w -`          | decrease split height
+NORMAL  | `Ctrl + w >`          | increase split width
+NORMAL  | `Ctrl + w <`          | decrease split width
+NORMAL  | `Ctrl + w o`          | close all other splits
+NORMAL  | `<leader>/cd`         | open LSP definition in vertical split
+NORMAL  | `<leader>-cd`         | open LSP definition in horizontal split
+NORMAL  | `<leader>gd`          | open git diff in vertical split
+FZF     | `Ctrl + v`            | open FZF result in vertical split
+FZF     | `Ctrl + x`            | open FZF result in horizontal split
+
+---
+
+## Vim reference
+
+### Cursor movement
+
+key     | action
+--------|-------
+`h`     | left
+`j`     | down
+`k`     | up
+`l`     | right
+`w`     | jump to start of next word
+`W`     | jump to start of next WORD
+`e`     | jump to end of word
+`b`     | jump to start of previous word
+`0`     | start of line
+`^`     | first non-blank character
+`$`     | end of line
+`G`     | last line
+`5G`    | go to line 5
+`''`    | position before last jump
+
+### Insert mode
+
+key     | action
+--------|-------
+`i`     | insert before cursor
+`I`     | insert at beginning of line
+`a`     | insert after cursor
+`A`     | insert at end of line
+`o`     | new line below
+`O`     | new line above
+`ea`    | insert at end of word
+`Esc`   | exit insert mode
+
+### Editing
+
+key     | action
+--------|-------
+`r`     | replace single character
+`J`     | join line below
+`cc`    | replace entire line
+`cw`    | replace to end of word
+`c$`    | replace to end of line
+`s`     | delete character and substitute
+`u`     | undo
+`Ctrl+r`| redo
+`.`     | repeat last command
+
+### Visual mode
+
+key         | action
+------------|-------
+`v`         | start visual mode
+`V`         | linewise visual mode
+`Ctrl + v`  | visual block mode
+`aw`        | select word
+`ab`        | select block with `()`
+`aB`        | select block with `{}`
+`>`         | indent
+`<`         | unindent
+`y`         | yank
+`d`         | delete
+`~`         | switch case
+
+### Cut & paste
+
+key     | action
+--------|-------
+`yy`    | yank line
+`yw`    | yank word
+`y$`    | yank to end of line
+`p`     | paste after cursor
+`P`     | paste before cursor
+`dd`    | delete line
+`dw`    | delete word
+`D`     | delete to end of line
+`x`     | delete character
+
+### Search & replace
+
+command             | action
+--------------------|-------
+`*`                 | search word under cursor
+`/pattern`          | search forward
+`?pattern`          | search backward
+`n`                 | repeat search forward
+`N`                 | repeat search backward
+`:%s/old/new/g`     | replace all in file
+`:%s/old/new/gc`    | replace all with confirmation
+
+### Exiting
+
+command | action
+--------|-------
+`:w`    | save
+`:wq`   | save and quit
+`:q`    | quit (fails if unsaved)
+`:q!`   | quit discarding changes

@@ -41,8 +41,8 @@ ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$WHITE%}]"
 
 
 function git_prompt_ahead_current_branch(){
-  if $(git log origin/$(current_branch)..HEAD 1> /dev/null 2> /dev/null); then
-    echo " [+$(git log --oneline origin/$(current_branch)..HEAD 2> /dev/null | wc -l)]"
+  if $(git log origin/$(git_current_branch)..HEAD 1> /dev/null 2> /dev/null); then
+    echo " [+$(git log --oneline origin/$(git_current_branch)..HEAD 2> /dev/null | wc -l)]"
   fi
 }
 
@@ -50,4 +50,4 @@ function git_prompt_ahead_current_branch(){
 PROMPT='
 %{$GREEN_BOLD%}%n@%m%{$WHITE%}:%{$YELLOW%}%~%u$(parse_git_dirty)$(git_prompt_ahead)%{$RESET_COLOR%}
 %{$BLUE%}>%{$RESET_COLOR%} '
-RPROMPT='%{$GREEN_BOLD%}$(current_branch)$(git_prompt_ahead_current_branch)$(git_prompt_short_sha)$(git_prompt_status)%{$RESET_COLOR%}'
+RPROMPT='%{$GREEN_BOLD%}$(git_current_branch)$(git_prompt_ahead_current_branch)$(git_prompt_short_sha)$(git_prompt_status)%{$RESET_COLOR%}'

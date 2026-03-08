@@ -1,3 +1,4 @@
+.zshrc_secrets
 .rake_test_cache
 *.swp
 *.pyc
