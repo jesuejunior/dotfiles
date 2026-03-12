@@ -5,8 +5,18 @@
 [commit]
     verbose = true
     gpgsign = true
+[column]
+    ui = auto
 [branch]
     autosetuprebase = always
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [stash]
     showPatch = true
 [merge]
@@ -17,6 +27,9 @@
 	prompt = false
 [core]
     editor = vim
+    excludesfile = ~/.gitignore
+    fsmonitor = true
+    untrackedCache = true
 [color]
     diff = auto
     status = auto
@@ -39,6 +52,20 @@
 [pull]
 	rebase = true
 [push]
-	default = simple
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
+# why the hell not?
+
+[help]
+    autocorrect = prompt
