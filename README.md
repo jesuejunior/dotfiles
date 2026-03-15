@@ -49,8 +49,31 @@ NORMAL  | `<leader>gd`          | git diff (vertical split)
 NORMAL  | `<leader>gp`          | git push
 NORMAL  | `<leader>gP`          | git push --force
 NORMAL  | `<leader>gpr`         | git pull --rebase
-NORMAL  | `<leader>dp`          | diffput (accept current change)
-NORMAL  | `<leader>dg`          | diffget (accept incoming change)
+NORMAL  | `<leader>gDp`         | diffput (accept current change)
+NORMAL  | `<leader>gDg`         | diffget (accept incoming change)
+
+### Debugger (Vimspector)
+
+> Requires `:VimspectorInstall CodeLLDB` for Rust.
+> Copy the template to your project root: `cp ~/.vim/templates/vimspector-rust.json .vimspector.json`
+> then replace `${binaryName}` with your crate name.
+
+mode    | shortcut              | description
+--------|-----------------------|-------------------------------------------
+NORMAL  | `<leader>dd`          | launch debugger
+NORMAL  | `<leader>dx`          | stop / reset debugger
+NORMAL  | `<leader>dc`          | continue execution
+NORMAL  | `<leader>dp`          | pause execution
+NORMAL  | `<leader>db`          | toggle breakpoint
+NORMAL  | `<leader>dB`          | toggle conditional breakpoint
+NORMAL  | `<leader>dC`          | clear all breakpoints
+NORMAL  | `<leader>ds`          | step over
+NORMAL  | `<leader>di`          | step into
+NORMAL  | `<leader>do`          | step out
+NORMAL  | `<leader>dk`          | navigate up in call stack
+NORMAL  | `<leader>dj`          | navigate down in call stack
+NORMAL  | `<leader>de`          | evaluate expression
+NORMAL  | `<leader>dw`          | add watch expression
 
 ### Diff mode
 
