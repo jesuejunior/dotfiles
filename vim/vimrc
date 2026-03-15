@@ -183,6 +183,12 @@ Plug 'sainnhe/sonokai'           " dark  — set g:sonokai_style to 'atlantis'
 Plug 'NLKNguyen/papercolor-theme' " light — set background=light | colorscheme PaperColor
 Plug 'joshdick/onedark.vim'       " dark  — current default
 
+" Language server registrations must happen before plug#end()
+" because lsp_setup fires during plug#end().
+call SourceFileIfExist('langs/python.vim')
+call SourceFileIfExist('langs/rust.vim')
+call SourceFileIfExist('langs/terraform.vim')
+
 call plug#end()
 
 """ Colors
@@ -385,9 +391,4 @@ call SourceFileIfExist('vim-test.vim')
 call SourceFileIfExist('vimspector.vim')
 
 
-" Suporte a linguages
-" Configuração de Language Server Protocols
-call SourceFileIfExist('langs/python.vim')
-call SourceFileIfExist('langs/rust.vim')
-call SourceFileIfExist('langs/terraform.vim')
 

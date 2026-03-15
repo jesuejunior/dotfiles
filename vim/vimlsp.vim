@@ -30,4 +30,4 @@ let g:lsp_documentation_float = 0
 let g:lsp_preview_float = 0
 
 " Muito útil para debugar um LSP server não funcional
-let g:lsp_log_file = ''
+let g:lsp_log_file = expand('~/vim-lsp.log')

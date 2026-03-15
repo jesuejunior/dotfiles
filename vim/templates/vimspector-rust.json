@@ -1,0 +1,26 @@
+{
+  "configurations": {
+    "launch": {
+      "adapter": "CodeLLDB",
+      "filetypes": ["rust"],
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/target/debug/${binaryName}",
+        "args": [],
+        "cwd": "${workspaceRoot}",
+        "sourceLanguages": ["rust"]
+      }
+    },
+    "test": {
+      "adapter": "CodeLLDB",
+      "filetypes": ["rust"],
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/target/debug/deps/${binaryName}",
+        "args": ["--test-threads=1"],
+        "cwd": "${workspaceRoot}",
+        "sourceLanguages": ["rust"]
+      }
+    }
+  }
+}
