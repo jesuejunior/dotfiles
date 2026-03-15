@@ -111,7 +111,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Docker
 alias dkc="docker builder prune && docker images | grep 'none' | awk '{print $3}' | xargs docker rmi -f"
 alias dc="docker-compose"
-
+alias docker="podman"
 alias yf="gpg-connect-agent updatestartuptty /bye"
 #python
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
@@ -181,5 +181,6 @@ function dbt() {
     /Users/jesue/.local/bin/dbt "$@"
   fi
 }
+export DOCKER_HOST="unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')"
 eval "$(direnv hook zsh)"
 
